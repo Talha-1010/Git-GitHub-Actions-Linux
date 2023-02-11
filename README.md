@@ -96,6 +96,8 @@ Add modified and deleted files:
 `$ git add -u`
 
 
+## Flow Diagram
+<img width="604" alt="githubflow" src="https://user-images.githubusercontent.com/61515279/218255242-29745406-14d6-40b7-aa98-2b8f5a7754cf.PNG">
 
 
 
