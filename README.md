@@ -143,9 +143,30 @@ For example, to change the file permissions for a test.txt file so anyone can re
 
  `chmod 777 file.txt`
 
+#### #4 whatis command
+
+The whatis command is a quick way to determine what a command does. Add it as a prefix to any command, for example:
+
+`whatis cat`
+
+The output will show a one-line description for the cat command from the documentation.
 
 
+#### #5 vim command
 
+Vim (Vi improved) is a Linux text editor that runs in the terminal. To make a new file or open an existing one in Vim, run:
+
+`vim <filename>`
+
+Press I to enter insert mode and enter some text. To save changes and exit Vim, press Esc, write :wq, and hit Enter.
+
+#### #6 nano command
+
+GNU nano (Nano's another editor) is a keyboard-oriented Linux text editor. Make a new file or open an existing one in nano with:
+
+`nano <filename>`
+
+The editor automatically opens, allowing you to append text or code to the file. To save and close, press CTRL+X, then Y, and confirm with Enter.
 
 
 
