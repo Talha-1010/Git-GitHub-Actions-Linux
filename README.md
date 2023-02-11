@@ -169,6 +169,14 @@ GNU nano (Nano's another editor) is a keyboard-oriented Linux text editor. Make 
 The editor automatically opens, allowing you to append text or code to the file. To save and close, press CTRL+X, then Y, and confirm with Enter.
 
 
+## Github Actions
+
+### Introduction:
+
+GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
+
+
+
 
 
 
