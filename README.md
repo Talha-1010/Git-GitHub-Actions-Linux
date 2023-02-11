@@ -100,6 +100,53 @@ Add modified and deleted files:
 <img width="604" alt="githubflow" src="https://user-images.githubusercontent.com/61515279/218255242-29745406-14d6-40b7-aa98-2b8f5a7754cf.PNG">
 
 
+## Linux
+
+### Introduction:
+
+Linux is famous for its powerful commands. To use Linux effectively, all users should know how to use terminal commands. Although the OS has a GUI, many functionalities work faster when run as commands through the terminal.
+
+This guide showcases some of the useful Linux commands all users should know.
+
+#### #1 pwd command
+
+The pwd command (print working directory) is a shell builtin command that prints the current location. The output shows an absolute directory path, starting with the root directory (/).
+
+The general syntax is:
+`pwd <options>`
+
+To see how the command works, run the following in the terminal:
+`pwd`
+
+#### #2 mkdir command
+
+The mkdir (make directory) command creates a new directory in the provided location. Use the command in the following format:
+
+`mkdir <directory name>`
+
+Provide a path to create a directory in the given location, or use a space or comma-separated list to create multiple directories simultaneously.
+
+#### #3 chmod command
+
+Use the chmod (change mode) command to change file and directory permissions. The command requires setting the permission code and the file or directory to which the permissions apply.
+
+For example:
+`chmod <permission> <file or directory>`
+
+The permission is a number code consisting of three numbers:
+
+- The first number is the permission of the current user (owner).
+- The second number is the permission for the group.
+- The third number is permissions for everyone else.
+
+For example, to change the file permissions for a test.txt file so anyone can read, write, and execute, run:
+
+ `chmod 777 file.txt`
+
+
+
+
+
 
 
 
