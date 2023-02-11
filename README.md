@@ -175,6 +175,126 @@ The editor automatically opens, allowing you to append text or code to the file.
 
 GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
 
+### The components of GitHub Actions
+
+You can configure a GitHub Actions workflow to be triggered when an event occurs in your repository, such as a pull request being opened or an issue being created. Your workflow contains one or more jobs which can run in sequential order or in parallel. Each job will run inside its own virtual machine runner, or inside a container, and has one or more steps that either run a script that you define or run an action, which is a reusable extension that can simplify your workflow.
+
+<img width="437" alt="Components" src="https://user-images.githubusercontent.com/61515279/218275439-e6fcd99a-62f1-45f3-9edb-e43137dc6739.PNG">
+
+#### Workflows
+
+A workflow is a configurable automated process that will run one or more jobs.They will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule.
+
+Workflows are defined in the .github/workflows directory in a repository, and a repository can have multiple workflows, each of which can perform a different set of tasks. For example, you can have one workflow to build and test pull requests, another workflow to deploy your application every time a release is created, and still another workflow that adds a label every time someone opens a new issue.
+
+#### Events
+
+An event is a specific activity in a repository that triggers a workflow run.
+
+#### Jobs
+
+A job is a set of steps in a workflow that execute on the same runner. Each step is either a shell script that will be executed, or an action that will be run.
+
+#### Actions
+
+An action is a custom application for the GitHub Actions platform that performs a complex but frequently repeated task. Use an action to help reduce the amount of repetitive code that you write in your workflow files. An action can pull your git repository from GitHub, set up the correct toolchain for your build environment, or set up the authentication to your cloud provider.
+
+You can write your own actions, or you can find actions to use in your workflows in the GitHub Marketplace.
+
+#### Runners
+
+A runner is a ***server*** that runs your workflows when they're triggered. Each runner can run a single job at a time. GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows; each workflow run executes in a fresh, newly-provisioned virtual machine. GitHub also offers larger runners, which are available in larger configurations.
+
+
+### Create an example workflow
+
+In this workflow, GitHub Actions checks out the pushed code, installs the bats testing framework, and runs a basic command to output the bats version: `bats -v`
+
+1. In your repository, create the .github/workflows/ directory to store your workflow files.
+
+2. In the `.github/workflows/` directory, create a new file called `learn-github-actions.yml` and add the following code.
+
+```
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+```
+
+3. Commit these changes and push them to your GitHub repository.
+
+Your new GitHub Actions workflow file is now installed in your repository and will run automatically each time someone pushes a change to the repository.
+
+
+
+### Understanding the workflow file
+Here you will learn the most helpful Git commands that will take you to the next level in development:
+
+#### #1 name:workflow-name
+
+#### Usage
+
+`name: learn-github-actions`
+
+The name of the workflow as it will appear in the "Actions" tab of the GitHub repository.
+
+#### #2 on:event-name
+
+#### Usage
+
+`on: [push]`
+
+Specifies the trigger for this workflow. This example uses the push event, so a workflow run is triggered every time someone pushes a change to the repository or merges a pull request.
+
+
+#### #3 jobs:
+
+Groups together all the jobs that run in the learn-github-actions workflow.
+
+
+##### #4 check-bats-version:
+
+Defines a job named check-bats-version. The child keys will define properties of the job.
+
+##### #5 runs-on: operating-system
+
+##### Usage
+
+`runs-on: ubuntu-latest`
+
+Configures the job to run on the latest version of an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+
+
+##### #6 steps:
+
+Groups together all the steps that run in the check-bats-version job. Each item nested under this section is a separate action or shell script.
+
+##### #7 run: command
+
+#### Usage
+`- run: npm install -g bats`
+
+The run keyword tells the job to execute a command on the runner. In this case, you are using npm to install the bats software testing package.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
